@@ -1,0 +1,31 @@
+body {
+    background-color: purple;
+    text-align: center;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    padding: 20px 0px 20px 0px;
+}
+
+.background {
+    width: 45%;
+    height: 45%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+/* @media (max-width: 540px), (max-height: 630px)  */
+div {
+    display: block;
+}
+
+.square-top-left {
+    display: block;
+}
