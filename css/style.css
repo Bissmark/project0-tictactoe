@@ -1,9 +1,17 @@
-body {
-    background-color: purple;
-    text-align: center;
+:root {
+    --cell-size: 100px;
+
+    --color: #81c3fd;
+    --color-set: #0275d8;
+    --1: 10px;
 }
 
-img {
+body {
+    text-align: center;
+    margin: 0;
+}
+
+/* img {
     width: 120px;
     height: 120px;
     padding: 20px 0px 20px 0px;
@@ -15,17 +23,42 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+} */
+
+.board {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
 }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
 }
-/* @media (max-width: 540px), (max-height: 630px)  */
+
+.horde {
+    background-image: url('../images/Horde.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.alliance {
+    background-image: url('../images/Alliance.ico');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 div {
-    display: block;
-}
-
-.square-top-left {
     display: block;
 }
