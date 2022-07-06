@@ -1,34 +1,20 @@
 :root {
     --cell-size: 100px;
-
-    --color: #81c3fd;
-    --color-set: #0275d8;
-    --1: 10px;
 }
 
 body {
+    width: 960px;
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
+    background-image: url('../images/dalaran.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-/* img {
-    width: 120px;
-    height: 120px;
-    padding: 20px 0px 20px 0px;
-}
-
-.background {
-    width: 45%;
-    height: 45%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-} */
 
 .board {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
+    height: 70%;
+    padding: 50px 0px 30px 0px;
+    display: inline-grid;
     justify-content: center;
     align-content: center;
     justify-items: center;
@@ -39,12 +25,42 @@ body {
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
-    border: 1px solid black;
+    border: 1px solid whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     cursor: pointer;
+}
+
+#button {
+    box-sizing: border-box;
+    width: 95px;
+    height: 40px;
+    border: 1px solid black;
+    margin: auto;
+    border-radius: 4px;
+}
+
+div .player1 {
+    float: left;
+    width: 40%;
+}
+
+div .player2 {
+    float: right;
+    width: 40%;
+}
+
+h1 {
+    color: yellow;
+    -webkit-text-stroke: 1px black;
+}
+
+p {
+    color: whitesmoke;
+    font-size: 50px;
+    display: contents;
 }
 
 .horde {
@@ -57,8 +73,4 @@ body {
     background-image: url('../images/Alliance.ico');
     background-size: contain;
     background-repeat: no-repeat;
-}
-
-div {
-    display: block;
 }
