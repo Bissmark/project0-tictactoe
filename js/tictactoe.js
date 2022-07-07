@@ -33,17 +33,17 @@ const findWin = function() {
         if(gameArray[a] && (gameArray[a] === gameArray[b] && gameArray[a] === gameArray[c])) {
             if (hordeTurn) {
                 alert("Alliance win!");
-                playerOnePoints++; 
+                $('#player2-score').addClass('flip');
+                playerOnePoints++;
                 $('#player2-score').text(playerOnePoints);
             } else {
                 alert("Horde Win!")
-                playerTwoPoints++; 
+                playerTwoPoints++;
+                $('#player1-score').addClass('flip');
                 $('#player1-score').text(playerTwoPoints);
             }
-            return combination;
         }
     }
-    return null;
 }
 
 const restart = function() {
@@ -51,19 +51,24 @@ const restart = function() {
         gameArray = ['', '', '', '', '', '', '', '', ''];
         $('.cell').removeClass('horde');
         $('.cell').removeClass('alliance');
+        $('#player1-score').removeClass('flip');
+        $('#player2-score').removeClass('flip');
+        moves = 0;
     })    
 }
 
 $(document).ready(function () {
     hordeTurn = false;
     restart();
+    //egg();
 
     $('.cell').on('click', function(event) {
         const cell = event.target;
-        var parent = $(cell).parent();
-        var index = parent.children().index(this);
+        let parent = $(cell).parent();
+        let index = parent.children().index(this);
 
         gameArray[index] = hordeTurn ? 1 : 2;
+        console.log(moves);
         
         if (hordeTurn) {
             const img = $(this).addClass('horde');
@@ -71,13 +76,23 @@ $(document).ready(function () {
             swapTurn();
             findWin();
             checkDraw();
+            //$('#player1-score').removeClass('flip');
         } 
         else {
             const img = $(this).addClass('alliance');
             $(this).attr('src', img);
             swapTurn();
             findWin();     
-            checkDraw();       
+            checkDraw();   
+            //$('#player2-score').removeClass('flip');    
         } 
     });
 });
+
+// const egg = function() {
+//     $('body').keypress(function(e) {
+//         if(e.keyCode == 32 && e.keyCode == 32) {
+//             console.log('space bar is pressed');
+//         }
+//     });
+// }
