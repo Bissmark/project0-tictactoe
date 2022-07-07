@@ -1,46 +1,31 @@
-# Introduction to Markdown
-## Subheading
-### Subsubheading
+# Tic Tac Toe WoW Style
+## Introduction
 
-alternative for h2
-----------
+I have created a World of Warcraft Tic Tac Toe game with some fun art and being the ability to once more take the fight as either Horde or Alliance.
 
-Alternative for h1
+#
+
+Technologies
 ============
 
-Paragraphs are respected
+This project is created in Javascript using the libraries:
+- Jquery 3.6.0
+- Animate.css 4.1.1
+#
 
-New lines are separating your paragraphs.
+## How to play
+#
 
-## Textual Emphasis
+You just need to load 
+https://bissmark.github.io/project0-tictactoe/ 
+into your web browser to play. Then you can start a 2 player version of Tic Tac Toe. When there is a draw or a win the score is increased for the winner and you can reset the board to play again.
 
-Here is a paragraph with **bold** and *italic* text. Also write _underscore_. Also __bold__.
+## Features
+#
+It is pretty, it works and you get to play as Alliance or Horde in an epic battle!
+#
 
-Wow this is ***intense***.
-
-## Lists
-
-- Groucho
-- Harpo
-- Chico
-
-Alternatively:
-* Groucho
-* Harpo
-* Chico
-
-### Numbered Lists
-1. Groucho
-2. Harpo
-3. Chico
-4. Zeppo
-
-## Links
-Links are important! Here is a link to [Github](http://www.github.com/).
-
-![Bill Murray](https://www.fillmurray.com/50/100)
-
-## Code
+<!-- ## Code
 
 A commonly used variable in the browser is called `document`. See also: `window`, which also crops up a lot. jQuery uses the `$` variable.
 
@@ -48,4 +33,4 @@ A commonly used variable in the browser is called `document`. See also: `window`
 const  hey = function () {
     console.log('hello');
 }
-```
+``` -->
