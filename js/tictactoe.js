@@ -2,7 +2,7 @@ let hordeTurn = false;
 let gameArray = ['', '', '', '', '', '', '', '', ''];
 let playerOnePoints = 0;
 let playerTwoPoints = 0;
-let currentPlayer = 0;
+let moves = 0;
 
 const winCondition = [
     [0, 1, 2],
@@ -19,13 +19,28 @@ const swapTurn = function() {
     hordeTurn = !hordeTurn;
 }
 
+const checkDraw = function() {
+    moves++;
+    if(moves === 9) {
+        alert('Draw!');
+    }
+}
+
 const findWin = function() {
     for (const combination of winCondition) {
         const [a, b, c] = combination;
 
         if(gameArray[a] && (gameArray[a] === gameArray[b] && gameArray[a] === gameArray[c])) {
-            alert("WINNER!");
-            //return combination;
+            if (hordeTurn) {
+                alert("Alliance win!");
+                playerOnePoints++; 
+                $('#player2-score').text(playerOnePoints);
+            } else {
+                alert("Horde Win!")
+                playerTwoPoints++; 
+                $('#player1-score').text(playerTwoPoints);
+            }
+            return combination;
         }
     }
     return null;
@@ -33,16 +48,10 @@ const findWin = function() {
 
 const restart = function() {
     $('#reset').on('click', function(){
-        //location.reload();
         gameArray = ['', '', '', '', '', '', '', '', ''];
         $('.cell').removeClass('horde');
         $('.cell').removeClass('alliance');
     })    
-}
-
-const checkWinner = function(score) {
-    $('.player1 p').text += score;
-    $('.player2 p').text += score;
 }
 
 $(document).ready(function () {
@@ -60,15 +69,15 @@ $(document).ready(function () {
             const img = $(this).addClass('horde');
             $(this).attr('src', img);
             swapTurn();
-            currentPlayer = 1;
             findWin();
+            checkDraw();
         } 
         else {
             const img = $(this).addClass('alliance');
             $(this).attr('src', img);
             swapTurn();
-            currentPlayer = 0;
-            findWin();            
+            findWin();     
+            checkDraw();       
         } 
     });
 });
