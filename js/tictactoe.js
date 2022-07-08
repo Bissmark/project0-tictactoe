@@ -17,7 +17,7 @@ const winCondition = [ // These are all the winning moves
 ];
 
 const swapTurn = function() {
-    hordeTurn = !hordeTurn; // change turn from Alliance to Horde
+    hordeTurn = !hordeTurn; // change turn from Horde to Alliance
 }
 
 const checkDraw = function() { //if all cells get filled but there is no winner then its a draw
@@ -75,9 +75,9 @@ $(document).ready(function () {
             alert('This square is already full'); return;
         }
         if (hordeTurn === true) {
-            gameArray[index] = 1;
+            gameArray[index] = 1; // horde = index 1
         } else if (!hordeTurn) {
-            gameArray[index] = 2;
+            gameArray[index] = 2; // alliance = index 2
         }
 
         if (hordeTurn) {
