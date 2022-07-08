@@ -74,7 +74,11 @@ $(document).ready(function () {
         if(gameArray[index] !== '') { // Was having some issues with being to put emblems over other emblems if the space was full making scenarios where you could have a draw when the cells werent all full or being able to swap emblems to force a win for a specific faction
             alert('This square is already full'); return;
         }
-        gameArray[index] = hordeTurn ? 1 : 2;
+        if (hordeTurn === true) {
+            gameArray[index] = 1;
+        } else if (!hordeTurn) {
+            gameArray[index] = 2;
+        }
 
         if (hordeTurn) {
             const img = $(this).addClass('horde');
